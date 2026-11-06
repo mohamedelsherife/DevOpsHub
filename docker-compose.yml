@@ -1,0 +1,33 @@
+services:
+  redis:
+    image: redis:latest
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    networks:
+      - devopshub-net
+
+  app1:
+    build: ./app1
+    ports:
+      - "5000:3000"
+    depends_on:
+      - redis
+    networks:
+      - devopshub-net
+
+  app2:
+    build: ./app2
+    ports:
+      - "5001:3000"
+    depends_on:
+      - redis
+    networks:
+      - devopshub-net
+
+networks:
+  devopshub-net:
+    driver: bridge
+
+volumes:
+  redis_data:
