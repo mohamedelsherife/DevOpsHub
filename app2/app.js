@@ -4,7 +4,6 @@ const redis = require("redis");
 const app = express();
 const port = 3000;
 
-// الاتصال بـ Redis عن طريق اسم الخدمة "redis"
 const client = redis.createClient({
   url: "redis://redis:6379",
 });
@@ -14,8 +13,8 @@ client.connect();
 
 app.get("/", async (req, res) => {
   try {
-    const totalMessages = await client.lLen("messages"); // عدد الرسائل
-    const totalVisits = (await client.get("visits")) || 0; // عدد الزيارات
+    const totalMessages = await client.lLen("messages"); 
+    const totalVisits = (await client.get("visits")) || 0; 
 
     res.send(`
       <!DOCTYPE html>
