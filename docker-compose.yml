@@ -10,7 +10,7 @@ services:
   app1:
     build: ./app1
     ports:
-      - "5000:3000"
+      - "5002:3000"
     depends_on:
       - redis
     networks:
