@@ -11,8 +11,8 @@ A simple feedback collection system built with two Node.js web apps sharing one 
 
 | Field | Value |
 |---|---|
-| Name | `YOUR NAME HERE` |
-| ID | `YOUR ID HERE` |
+| First_Student | `Mohamed Ramy Elsherife 5882` |
+| Second_Student | `Ramdan Hussain Ramdan 4674` |
 | GitHub Repository | `https://github.com/YOUR-USERNAME/YOUR-REPO` |
 
 ---
@@ -278,7 +278,7 @@ docker images
 | Application | URL |
 |---|---|
 | App 1 – Message Collector | http://localhost:5002 |
-| App 2 – Dashboard | http://localhost:5001 |
+| App 2 – Dashboard | http://localhost:8001 |
 | Redis | Internal only (port 6379, not exposed to the host) |
 
 ---
