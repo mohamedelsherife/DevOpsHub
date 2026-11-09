@@ -207,7 +207,7 @@ services:
   app2:
     build: ./app2
     ports:
-      - "5001:3000"
+      - "8001:3000"
     depends_on:
       - redis
     networks:
@@ -244,7 +244,7 @@ CMD ["npm", "start"]
 ## 10. Dockerfile for App 2
 
 ```dockerfile
-FROM node:18-alpine
+FROM node:22-alpine
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
@@ -283,23 +283,8 @@ docker images
 
 ---
 
-## 13. Screenshots
 
-### Screenshot 1: `docker compose ps` (all services Up)
-
-![docker compose ps](screenshots/1-docker-compose-ps.png)
-
-### Screenshot 2: App 1 in the browser
-
-![App 1](screenshots/2-app1-browser.png)
-
-### Screenshot 3: App 2 in the browser
-
-![App 2](screenshots/3-app2-browser.png)
-
----
-
-## 14. Troubleshooting
+## 13. Troubleshooting
 
 | Problem | Cause | Solution |
 |---|---|---|
