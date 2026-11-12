@@ -13,7 +13,6 @@ A simple feedback collection system built with two Node.js web apps sharing one 
 |---|---|
 | First_Student | `Mohamed Ramy Elsherife 5882` |
 | Second_Student | `Ramdan Hussain Ramdan 4674` |
-| GitHub Repository | `https://github.com/YOUR-USERNAME/YOUR-REPO` |
 
 ---
 
@@ -38,7 +37,7 @@ All data is **persistent** (stored in a Docker volume) and all services talk to 
 ```mermaid
 flowchart LR
     U1[User Browser] -->|localhost:5002| A1[App 1<br/>Message Collector]
-    U2[User Browser] -->|localhost:5001| A2[App 2<br/>Dashboard]
+    U2[User Browser] -->|localhost:8001| A2[App 2<br/>Dashboard]
     A1 -->|INCR visits<br/>RPUSH messages| R[(Redis)]
     A2 -->|GET visits<br/>LLEN messages| R
     R --- V[(redis_data volume)]
@@ -91,10 +90,6 @@ DevOpsHub/
 │   ├── app.js            # Dashboard
 │   ├── package.json
 │   └── Dockerfile
-├── screenshots/
-│   ├── 1-docker-compose-ps.png
-│   ├── 2-app1-browser.png
-│   └── 3-app2-browser.png
 ├── docker-compose.yml
 └── README.md
 ```
@@ -122,8 +117,8 @@ docker compose version
 ### Step 1: Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+git clone https://github.com/mohamedelsherife/DevOpsHub.git
+cd DevOpsHub
 ```
 
 ### Step 2: Review the project files
